@@ -1,0 +1,22 @@
+h1. jFuncTest
+
+A functional testing lightweight framework.
+
+h2. Why are you not using jUnit like all the others ?
+
+jUnit is great. But I needed a tool to test several business requirements
+on a program which has very heavy fixtures. Couldn't afford to have all
+the fixtures re-run before each test.
+
+jFuncTest allows to do the setup once and for all.
+
+It also does all the requirements checks, regardless of whether one
+has failed in the same method.
+
+h2. License
+
+GNU Licensed.
+
+h2. Contact
+
+subtenante gmail com
