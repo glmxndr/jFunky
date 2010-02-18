@@ -1,11 +1,11 @@
 package fr.jfunctest.test;
 
 import fr.jfunctest.BaseTestCase;
-import fr.jfunctest.Checker;
 import fr.jfunctest.annotations.After;
 import fr.jfunctest.annotations.Before;
 import fr.jfunctest.annotations.Ignore;
 import fr.jfunctest.annotations.Test;
+import fr.jfunctest.assertion.Checker;
 import fr.jfunctest.test.model.Bowling;
 
 public class TestBowling extends BaseTestCase {

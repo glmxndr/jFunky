@@ -1,0 +1,63 @@
+<testsuite errors="0" failures="0" tests="1" name="fr.jfunctest.test.TestBowling" hostname="UNUSED" time="0" timestamp="UNUSED">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_10\jre\bin"/>
+    <property name="java.vm.version" value="11.0-b15"/>
+    <property name="ant.library.dir" value="C:\ant\lib"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.os.patch.level" value="Service Pack 3"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\tmp\jfunctest"/>
+    <property name="java.runtime.version" value="1.6.0_10-rc2-b32"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\endorsed"/>
+    <property name="os.arch" value="x86"/>
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\GANDRI~1.F64\LOCALS~1\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows XP"/>
+    <property name="ant.home" value="C:\ant"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_10\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Antenna\XSLFormatterV43;c:\program files\imagemagick-6.3.0-q16;C:\Program Files\Antenna\XSLFormatterV42;c:\ruby\bin;C:\php5\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Intel\DMIX;C:\Program Files\Hummingbird\Connectivity\9.00\Accessories\;C:\mysql5;C:\strawberry\c\bin;C:\strawberry\perl\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\FastSum;C:\Program Files\SlikSvn\bin\;C:\git\cmd;C:\Python25;C:\ruby\bin;C:\tools\xpdf\bin;D:\_INSTALL\apache-maven-2.1.0\bin;C:\tools\wget\bin;C:\tools\coreutils\bin;C:\Program Files\ImageMagick-6.3.0-Q16;C:\ant\bin;C:\Program Files\SlikSvn\bin"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="os.version" value="5.1"/>
+    <property name="user.home" value="C:\Documents and Settings\gandrieu.F647J3J"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="java.class.path" value="C:\ant\lib\ant-launcher.jar;C:\ant\lib\ant-antlr.jar;C:\ant\lib\ant-apache-bcel.jar;C:\ant\lib\ant-apache-bsf.jar;C:\ant\lib\ant-apache-log4j.jar;C:\ant\lib\ant-apache-oro.jar;C:\ant\lib\ant-apache-regexp.jar;C:\ant\lib\ant-apache-resolver.jar;C:\ant\lib\ant-commons-logging.jar;C:\ant\lib\ant-commons-net.jar;C:\ant\lib\ant-jai.jar;C:\ant\lib\ant-javamail.jar;C:\ant\lib\ant-jdepend.jar;C:\ant\lib\ant-jmf.jar;C:\ant\lib\ant-jsch.jar;C:\ant\lib\ant-junit.jar;C:\ant\lib\ant-launcher.jar;C:\ant\lib\ant-netrexx.jar;C:\ant\lib\ant-nodeps.jar;C:\ant\lib\ant-starteam.jar;C:\ant\lib\ant-stylebook.jar;C:\ant\lib\ant-swing.jar;C:\ant\lib\ant-testutil.jar;C:\ant\lib\ant-trax.jar;C:\ant\lib\ant-weblogic.jar;C:\ant\lib\ant.jar;C:\ant\lib\xercesImpl.jar;C:\ant\lib\xml-apis.jar;C:\Program Files\Java\jdk1.6.0_10\lib\tools.jar"/>
+    <property name="user.name" value="gandrieu"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_10\jre"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="1.6.0_10-rc2"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_10\jre\classes"/>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+  </properties>
+  <testcase time="0" classname="fr.jfunctest.test.TestBowling" name="BR0001 - 8 gutter means no point">
+  </testcase>
+  <system-out/>
+  <system-err/>
+</testsuite>

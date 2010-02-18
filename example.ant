@@ -1,0 +1,18 @@
+<project name="Jfunctest example" default="all">
+
+	
+    <taskdef 
+         name="jfunctest" 
+         classname="fr.jfunctest.ant.JfunctestTask" 
+         classpath="bin" />
+
+	<target name="all">
+    	<jfunctest 
+    		out="D:/tmp/jfunctest/example/out/">
+    		<fileset dir="./bin">
+    			<include name="**/TestBowling.class"/>
+    		</fileset>
+    	</jfunctest>
+	</target>
+
+</project>

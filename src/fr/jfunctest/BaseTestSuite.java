@@ -1,6 +1,7 @@
 package fr.jfunctest;
 
-import java.lang.annotation.Annotation;
+import java.io.File;
+import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -10,11 +11,14 @@ import fr.jfunctest.annotations.After;
 import fr.jfunctest.annotations.Before;
 import fr.jfunctest.annotations.Ignore;
 import fr.jfunctest.annotations.Test;
+import fr.jfunctest.render.Renderer;
 
-public abstract class BaseTestSuite {
+public class BaseTestSuite {
 
-	private TestCaseRenderer renderer;
+	private Renderer renderer;
 	private final List<BaseTestCase> tests = new ArrayList<BaseTestCase>();
+	
+	private File folderOut = new File(""); 
 	
 	public void beforeSuite(){}
 	
@@ -35,6 +39,7 @@ public abstract class BaseTestSuite {
 				// Run tests
 				for (Method m : clazz.getMethods()){
 					if ((m.getModifiers() & Modifier.PUBLIC) == 0) continue;
+					if ((m.getModifiers() & Modifier.STATIC) > 0) continue;
 					if (m.getName().equals("beforeAll")) continue;
 					if (m.getAnnotation(Before.class) != null) continue;
 					if (m.getAnnotation(After.class) != null) continue;
@@ -53,6 +58,15 @@ public abstract class BaseTestSuite {
 				}
 				testcase.afterAll();
 				
+				
+				// Render
+				File outFile = new File(this.folderOut,"TEST-"+clazz.getCanonicalName()+".xml");
+				PrintWriter writer = new PrintWriter(outFile);
+				synchronized (this.renderer) {
+					this.renderer.setWriter(writer);
+					this.renderer.render(testcase);
+				}
+				
 			}
 			catch(Exception e){
 				e.printStackTrace();
@@ -64,11 +78,11 @@ public abstract class BaseTestSuite {
 
 	
 	//+++++ ACCESSORS
-	public TestCaseRenderer getRenderer() {
+	public Renderer getRenderer() {
 		return renderer;
 	}
 
-	public void setRenderer(TestCaseRenderer renderer) {
+	public void setRenderer(Renderer renderer) {
 		this.renderer = renderer;
 	}
 	
@@ -79,6 +93,10 @@ public abstract class BaseTestSuite {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+
+	public void setFolderOut(File folderOut) {
+		this.folderOut = folderOut;
 	}
 	//----- ACCESSORS
 	

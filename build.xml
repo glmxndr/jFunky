@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="jfunctest" default="jar">
+    <description>
+        Permet de creer le jar pour le jfunctest.
+    </description>
+
+    <property name="build" value="build" />
+    <property name="src" value="src" />
+    <property name="lib" value="lib" />
+    <property name="dist" value="dist" />
+    
+    <path id="classpath">
+        <fileset dir="${lib}" includes="**/*.jar"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="${build}"/>
+        <mkdir dir="${build}"/>
+    </target>
+
+    <target name="compile">
+        <javac srcdir="${src}" destdir="${build}" classpathref="classpath" encoding="UTF-8"/>
+    </target>
+
+    <target name="jar" depends="clean,compile">
+        <jar destfile="${dist}/jfunctest.jar">
+            <fileset dir="${build}"/>
+            <manifest>
+                <attribute name="Manifest-Version" value="1.0" />
+                <attribute name="Class-Path" value="" />
+            </manifest>
+        </jar>
+        <ant target="clean"/>
+    </target>
+
+
+</project>
