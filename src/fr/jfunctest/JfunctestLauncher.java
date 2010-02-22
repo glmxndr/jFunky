@@ -25,13 +25,43 @@ import fr.jfunctest.render.JunitXmlRenderer;
 import fr.jfunctest.render.Renderer;
 import fr.jfunctest.util.StringUtil;
 
+/**
+ * 
+ * This class allows to launch jfunctest from the command line,
+ * or from ant.
+ * 
+ * Call {@link #main(String[])} with the arguments as described in {@link #usage()}.
+ * 
+ * @author G.Andrieu
+ *
+ */
 public class JfunctestLauncher {
 
+	//+++++ ATTRIBUTES
 	private BaseTestSuite suite;
 	private final List<Class> classes = new ArrayList<Class>();;
 	private File folderOut = new File("");
 	private Renderer renderer = new JunitXmlRenderer();
+	//----- ATTRIBUTES
 	
+	//+++++ PUBLIC
+	/**
+	 * Describes how to use this class from the command line
+	 */
+	public static void usage(){
+		System.out.println("USAGE:\n");
+		System.out.println(" -suite:pack.age.ClassName : specify the classes to test\n");
+		System.out.println(" -classes:pack.age.ClassName[;pack.age.OtherClassName;...] : specify the classes to test\n");
+		System.out.println(" [-out:D:/path/to/out/folder] : specify where to put the results ; defaults to execution path\n");
+		System.out.println(" [-renderer:pack.age.:Classname] : specify the renderer class ; default to JUnitXmlRenderer\n");
+	}
+
+	public static void main(String[] args) {
+		new JfunctestLauncher().process(args);
+	}
+	//----- PUBLIC
+	
+	//+++++ PRIVATE
 	private void process(String[] args) {
 		Map<String,String> mapargs = mapifyArguments(args);
 		System.out.println(mapargs);
@@ -120,21 +150,8 @@ public class JfunctestLauncher {
 		
 		// OK !
 		return true;
-	}
+	}	
 
-	public static void main(String[] args) {
-		new JfunctestLauncher().process(args);
-	}
-	
-	private static void usage(){
-		System.out.println("USAGE:\n");
-		System.out.println(" -suite:pack.age.ClassName : specify the classes to test\n");
-		System.out.println(" -classes:pack.age.ClassName[;pack.age.OtherClassName;...] : specify the classes to test\n");
-		System.out.println(" [-out:D:/path/to/out/folder] : specify where to put the results ; defaults to execution path\n");
-		System.out.println(" [-renderer:pack.age.:Classname] : specify the renderer class ; default to JUnitXmlRenderer\n");
-	}
-
-	
     private Map<String, String> mapifyArguments(String[] args) {
     	String allArgs = StringUtil.implode(args, " ");
     	System.out.println(allArgs);
@@ -150,4 +167,6 @@ public class JfunctestLauncher {
 
         return result;
     }
+	//----- PRIVATE
+	
 }

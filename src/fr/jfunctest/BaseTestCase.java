@@ -21,19 +21,63 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import fr.jfunctest.annotations.After;
+import fr.jfunctest.annotations.Before;
+import fr.jfunctest.annotations.Test;
 import fr.jfunctest.assertion.Assertion;
-import fr.jfunctest.render.Renderer;
 
+/**
+ * 
+ * Extend this class to write a test.
+ * 
+ * You must use the {@link Test} annotations to set public methods as testable.
+ * 
+ * Methods with {@link Before} annotation will be run before the Tests,
+ * although the order in which they are run is not guaranteed.
+ * 
+ * Methods with {@link After} annotation will be run before the Tests,
+ * although the order in which they are run is not guaranteed.
+ * 
+ * @author G.Andrieu
+ */
 public class BaseTestCase {
 
+	//+++++ STATIC ATTRIBUTES
+	/** Requirement name for the assertions created through function() */
+	private final static String FUNCTION_RQ = "FUNCTION";
+	/** Requirement name for the assertions created through internal() */
+	private final static String INTERNAL_RQ = "INTERNAL";
+	//----- STATIC ATTRIBUTES
+	
+	//+++++ ATTRIBUTES
+	/**
+	 * Mapping the requirements to the assertions made on them.
+	 */
 	private final Map<String,ArrayList<Assertion>> requirements = new TreeMap<String, ArrayList<Assertion>>();
+	//----- ATTRIBUTES
 	
-	private Renderer renderer;
-	
+	//+++++ TO BE OVERRIDEN 
+	/**
+	 * Override this method to put the test set up.
+	 */
 	public void beforeAll(){}
 	
+	/**
+	 * Override this method to put the test tear down.
+	 */
 	public void afterAll(){}
+	//----- TO BE OVERRIDEN
 	
+	//+++++ PROTECTED
+	/**
+	 * This instanciates an assetion for the given requirement
+	 * @param name the requirement name
+	 * @return a new Assertion instance, recorded in the Map of 
+	 * requirements of this test. Once instanciated, this assertion may
+	 * be rendered, so any assertion instanciated through this method
+	 * should be checked, or else it will be flagged as a failure by
+	 * default.
+	 */
 	protected final Assertion requirement(String name){
 		if (!this.requirements.containsKey(name)){
 			this.requirements.put(name, new ArrayList<Assertion>());
@@ -43,23 +87,35 @@ public class BaseTestCase {
 		return result;
 	}
 	
-	protected final Assertion function(String name){
-		return requirement(name);
+	/**
+	 * Used by {@link BaseTestSuite} when a method invocation throws 
+	 * an exception.
+	 * @param name the function name
+	 * @return a new assertion
+	 */
+	final Assertion function(String name){
+		return requirement(FUNCTION_RQ).setMessage(name);
 	}
 	
+	/**
+	 * Use this to instanciate an assertion on the test internal state.
+	 * For example, when you want to make sure that such File you are reading
+	 * exists, because the file is mandatory to the test execution,
+	 * although the existence of the file is not specified by any requirement
+	 * (for you are in a testing environment).
+	 * @param desc the description of the test
+	 * @return an new assertion
+	 */
 	protected final Assertion internalTest(String desc){
-		return requirement("INTERNAL TEST").setMessage(desc);
+		return requirement(INTERNAL_RQ).setMessage(desc);
 	}
+	//----- PROTECTED
 
-	public Renderer getRenderer() {
-		return renderer;
-	}
-
-
-	public void setRenderer(Renderer renderer) {
-		this.renderer = renderer;
-	}
-
+	//+++++ PUBLIC
+	/**
+	 * Counts ALL the tests done within this test at the time of invocation
+	 * @return the number of assertions recorded 
+	 */
 	public int getTestTotalCount() {
 		int cpt = 0;
 		for (String req : this.requirements.keySet()){
@@ -68,6 +124,10 @@ public class BaseTestCase {
 		return cpt;
 	}
 
+	/**
+	 * Counts the number of failed tests at the time of invocation
+	 * @return the total number of failed assertions
+	 */
 	public int getTestFailuresCount() {
 		int cpt = 0;
 		for (String req : this.requirements.keySet()){
@@ -80,10 +140,24 @@ public class BaseTestCase {
 		return cpt;
 	}
 
+
+	//----- PUBLIC
+	
+	//+++++ ACCESSORS
+	/**
+	 * Returns all the requirements used in this test.
+	 * @return a Set of Strings
+	 */
 	public Set<String> getRequirements() {
 		return this.requirements.keySet();
 	}
 
+	/**
+	 * Find assertions by requirement
+	 * @param requirement the name of the requirement
+	 * @return all the assertions made on the given test, empty list
+	 * if the requirement is not found
+	 */
 	public List<Assertion> getAssertions(String requirement) {
 		try{
 			return this.requirements.get(requirement);
@@ -92,5 +166,5 @@ public class BaseTestCase {
 			return new ArrayList<Assertion>();
 		}
 	}
-	
+	//----- ACCESSORS
 }

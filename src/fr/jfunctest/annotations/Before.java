@@ -18,6 +18,16 @@ package fr.jfunctest.annotations;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import fr.jfunctest.BaseTestCase;
+
+/**
+ * 
+ * Use this annotation in a {@link BaseTestCase}, to flag the method
+ * that need to be run before all the {@link Test} methods have been run.
+ * 
+ * @author G.Andrieu 
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Before {
 

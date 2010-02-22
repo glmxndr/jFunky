@@ -19,12 +19,14 @@ package fr.jfunctest.annotations;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import fr.jfunctest.BaseTestCase;
+
 /**
  * 
- * Use this annotation in a BaseTestCase, to flag the method
+ * Use this annotation in a {@link BaseTestCase}, to flag the method
  * that need to be run after all the {@link Test} methods have been run.
  * 
- * @author G.Andrieu subtenante@gmail.com
+ * @author G.Andrieu 
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

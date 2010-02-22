@@ -18,6 +18,21 @@ package fr.jfunctest.annotations;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import fr.jfunctest.BaseTestCase;
+
+
+/**
+ * 
+ * Use this annotation on methods of the {@link BaseTestCase} classes
+ * when you want the method to be run as a test.
+ * 
+ * Note that the method must be public, and that if it already has
+ * either a {@link Before}, an {@link After} or an {@link Ignore} annotation,
+ * it will not be skipped.
+ * 
+ * @author G.Andrieu
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Test {
 

@@ -18,6 +18,17 @@ package fr.jfunctest.annotations;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import fr.jfunctest.BaseTestCase;
+
+/**
+ * 
+ * Use this annotation in a {@link BaseTestCase}, to flag the methods
+ * already having a {@link Test} annotation, but that you do not want
+ * to be run.
+ * 
+ * @author G.Andrieu 
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Ignore {
 
