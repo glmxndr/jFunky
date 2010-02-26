@@ -13,7 +13,7 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest;
+package jfunky;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +21,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-import fr.jfunctest.annotations.After;
-import fr.jfunctest.annotations.Before;
-import fr.jfunctest.annotations.Test;
-import fr.jfunctest.assertion.Assertion;
+import jfunky.annotations.After;
+import jfunky.annotations.Before;
+import jfunky.annotations.Test;
+import jfunky.assertion.Assertion;
+
 
 /**
  * 

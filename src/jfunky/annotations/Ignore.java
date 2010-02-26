@@ -13,22 +13,24 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest.annotations;
+package jfunky.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import fr.jfunctest.BaseTestCase;
+import jfunky.BaseTestCase;
+
 
 /**
  * 
- * Use this annotation in a {@link BaseTestCase}, to flag the method
- * that need to be run before all the {@link Test} methods have been run.
+ * Use this annotation in a {@link BaseTestCase}, to flag the methods
+ * already having a {@link Test} annotation, but that you do not want
+ * to be run.
  * 
  * @author G.Andrieu 
  *
  */
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Before {
+public @interface Ignore {
 
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="jfunctest" default="jar">
+<project name="jFunky" default="jar">
     <description>
-        Permet de creer le jar pour le jfunctest.
+        Creates the jFunky jar file.
     </description>
 
     <property name="build" value="build" />
@@ -20,11 +20,17 @@
     </target>
 
     <target name="compile">
-        <javac srcdir="${src}" destdir="${build}" classpathref="classpath" encoding="UTF-8"/>
+        <javac 
+        	   srcdir="${src}" 
+        	   destdir="${build}" 
+        	   fork="true"
+        	   executable="/usr/bin/javac"
+        	   classpathref="classpath" 
+        	   encoding="UTF-8"/>
     </target>
 
     <target name="jar" depends="clean,compile">
-        <jar destfile="${dist}/jfunctest.jar">
+        <jar destfile="${dist}/jfunky.jar">
             <fileset dir="${build}"/>
             <manifest>
                 <attribute name="Manifest-Version" value="1.0" />

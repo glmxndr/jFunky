@@ -13,19 +13,16 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest.test.model;
+package jfunky.render;
 
-public class Bowling {
+import java.io.PrintWriter;
 
-	int down = 0;
-	
-	public void hit(int n){
-		this.down+=n;
-	}
-	
-	public int result(){
-		return this.down;
-	}
-	
+import jfunky.BaseTestCase;
+
+
+public interface Renderer {
+
+	void setWriter(PrintWriter writer);
+	void render(BaseTestCase testCase);
 	
 }

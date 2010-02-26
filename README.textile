@@ -1,21 +1,43 @@
-h1. jFuncTest
+h1. jFunky
 
-A functional testing lightweight framework.
+h2. What is it ?
 
-h2. Why are you not using jUnit like all the others ?
+It is a functional testing lightweight framework, built around the concept
+of business requirements.
+
+As for the name, well jFunc was already taken.
+
+
+h2. Why are you not using jUnit like all the others?
 
 jUnit is great. But I needed a tool to test several business requirements
 on a program which has very heavy fixtures. Couldn't afford to have all
 the fixtures re-run before each test.
 
-jFuncTest allows to do the setup once and for all.
+jFunky allows to do the setup once and for all.
 
 It also does all the requirements checks, regardless of whether one
-has failed in the same method.
+has failed in the same method. This allows to have a single method
+performing all related tests on a requirement without having to break
+the flow of execution into small hard-to-follow pieces.
+
+
+h2. Why are you not using jFunc like all the rest of the others?
+
+My specific need was to be requirement-centric, allowing to group my
+tests by business requirement.
+
+
+h2. Why should I use it?
+
+Being used by anybody else than the author is not a business requirement
+for jFunky.
+
 
 h2. License
 
 GNU Licensed.
+
 
 h2. Contact
 

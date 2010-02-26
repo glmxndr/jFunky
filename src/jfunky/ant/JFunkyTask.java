@@ -13,12 +13,17 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest.ant;
+package jfunky.ant;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import jfunky.BaseTestCase;
+import jfunky.BaseTestSuite;
+import jfunky.render.JunitXmlRenderer;
+import jfunky.render.Renderer;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
@@ -28,19 +33,15 @@ import org.apache.tools.ant.types.Resource;
 import org.apache.tools.ant.types.ResourceCollection;
 import org.apache.tools.ant.types.resources.Resources;
 
-import fr.jfunctest.BaseTestCase;
-import fr.jfunctest.BaseTestSuite;
-import fr.jfunctest.render.JunitXmlRenderer;
-import fr.jfunctest.render.Renderer;
 
-public class JfunctestTask extends Task {
+public class JFunkyTask extends Task {
 
 	private Project project;
 	private Resources resources = new Resources();
 	private Renderer renderer = new JunitXmlRenderer();
 	private File pathOut = new File("");
 
-	public JfunctestTask(Project project) {
+	public JFunkyTask(Project project) {
 		this.project = project;
 	}
 

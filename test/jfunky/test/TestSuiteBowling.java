@@ -13,23 +13,29 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+package jfunky.test;
 
-package fr.jfunctest.annotations;
+import jfunky.BaseTestSuite;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+public class TestSuiteBowling extends BaseTestSuite {
 
-import fr.jfunctest.BaseTestCase;
-
-/**
- * 
- * Use this annotation in a {@link BaseTestCase}, to flag the method
- * that need to be run after all the {@link Test} methods have been run.
- * 
- * @author G.Andrieu 
- *
- */
-@Retention(RetentionPolicy.RUNTIME)
-public @interface After {
-
+	@Override
+	public void beforeSuite() {
+		super.beforeSuite();
+		System.out.println("Before Suite !");
+	}
+	
+	@Override
+	public void afterSuite() {
+		super.afterSuite();
+		System.out.println("After Suite !");
+	}
+	
+	public static void main(String[] args) {
+		
+		TestSuiteBowling suite = new TestSuiteBowling();
+		suite.addTest(TestBowling.class);
+		suite.runTests();
+	}
+	
 }

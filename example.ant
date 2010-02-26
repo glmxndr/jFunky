@@ -2,12 +2,12 @@
 
 	
     <taskdef 
-         name="jfunctest" 
-         classname="fr.jfunctest.ant.JfunctestTask" 
+         name="jfunky" 
+         classname="fr.jfunctest.ant.JfunkyTask" 
          classpath="bin" />
 
 	<target name="all">
-    	<jfunctest 
+    	<jfunky
     		out="D:/tmp/jfunctest/example/out/">
     		<fileset dir="./bin">
     			<include name="**/TestBowling.class"/>

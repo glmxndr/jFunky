@@ -13,15 +13,15 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest.test;
+package jfunky.test;
 
-import fr.jfunctest.BaseTestCase;
-import fr.jfunctest.annotations.After;
-import fr.jfunctest.annotations.Before;
-import fr.jfunctest.annotations.Ignore;
-import fr.jfunctest.annotations.Test;
-import fr.jfunctest.assertion.Checker;
-import fr.jfunctest.test.model.Bowling;
+import jfunky.BaseTestCase;
+import jfunky.annotations.After;
+import jfunky.annotations.Before;
+import jfunky.annotations.Ignore;
+import jfunky.annotations.Test;
+import jfunky.assertion.Checker;
+import jfunky.test.model.Bowling;
 
 public class TestBowling extends BaseTestCase {
 

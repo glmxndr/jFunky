@@ -13,16 +13,8 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest.render;
+package jfunky.assertion;
 
-import java.io.PrintWriter;
-
-public abstract class BaseRenderer implements Renderer {
-
-	protected PrintWriter out;
-
-	public void setWriter(PrintWriter writer) {
-		this.out = writer;
-	}
+public class CheckException extends RuntimeException {
 
 }

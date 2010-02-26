@@ -13,7 +13,7 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest;
+package jfunky;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -21,9 +21,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import fr.jfunctest.render.JunitXmlRenderer;
-import fr.jfunctest.render.Renderer;
-import fr.jfunctest.util.StringUtil;
+import jfunky.render.JunitXmlRenderer;
+import jfunky.render.Renderer;
+import jfunky.util.StringUtil;
+
 
 /**
  * 
@@ -35,7 +36,7 @@ import fr.jfunctest.util.StringUtil;
  * @author G.Andrieu
  *
  */
-public class JfunctestLauncher {
+public class JFunkyLauncher {
 
 	//+++++ ATTRIBUTES
 	private BaseTestSuite suite;
@@ -57,7 +58,7 @@ public class JfunctestLauncher {
 	}
 
 	public static void main(String[] args) {
-		new JfunctestLauncher().process(args);
+		new JFunkyLauncher().process(args);
 	}
 	//----- PUBLIC
 	

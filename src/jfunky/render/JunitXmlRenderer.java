@@ -13,12 +13,13 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest.render;
+package jfunky.render;
 
 import java.util.List;
 
-import fr.jfunctest.BaseTestCase;
-import fr.jfunctest.assertion.Assertion;
+import jfunky.BaseTestCase;
+import jfunky.assertion.Assertion;
+
 
 public class JunitXmlRenderer extends BaseRenderer {
 

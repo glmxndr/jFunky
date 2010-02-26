@@ -13,7 +13,7 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-package fr.jfunctest;
+package jfunky;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -22,11 +22,12 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.jfunctest.annotations.After;
-import fr.jfunctest.annotations.Before;
-import fr.jfunctest.annotations.Ignore;
-import fr.jfunctest.annotations.Test;
-import fr.jfunctest.render.Renderer;
+import jfunky.annotations.After;
+import jfunky.annotations.Before;
+import jfunky.annotations.Ignore;
+import jfunky.annotations.Test;
+import jfunky.render.Renderer;
+
 
 /**
  * 
